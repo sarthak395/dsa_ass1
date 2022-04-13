@@ -52,6 +52,11 @@ void insert_at(my_dll* list, int x, int i) // insert at position 'i' (zero - ind
     //what if i==0
     if(i==0)
     {
+        if(list->root==NULL)
+        {
+            list->root=newnode;
+            return;
+        }
         list->root->prev=newnode;
         newnode->next=list->root;
         list->root=newnode;
@@ -68,7 +73,8 @@ void insert_at(my_dll* list, int x, int i) // insert at position 'i' (zero - ind
     newnode->next = currnode->next;
     currnode->next = newnode;
     newnode->prev = currnode;
-    newnode->next->prev = newnode;
+    if(newnode->next!=NULL)
+        newnode->next->prev = newnode;
 }
 
 void delete (my_dll *listptr, int i) // delete element at pos 'i' (zero - indexed)

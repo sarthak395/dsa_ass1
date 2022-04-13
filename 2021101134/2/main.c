@@ -22,7 +22,7 @@ int main()
             scanf("%f", &temp);
             c.arr[i] = temp;
         }
-        printf("%f\n", mod(c));
+        printf("%.2f\n", mod(c));
     }
 
     else if (strcmp(ins, "ADD") == 0)
@@ -49,7 +49,7 @@ int main()
 
         complex c3 = add(c1, c2);
         for (int i = 0; i < n; i++)
-            printf("%f ", c3.arr[i]);
+            printf("%.2f ", c3.arr[i]);
         printf("\n");
     }
 
@@ -77,7 +77,7 @@ int main()
 
         complex c3 = sub(c1, c2);
         for (int i = 0; i < n; i++)
-            printf("%f ", c3.arr[i]);
+            printf("%.2f ", c3.arr[i]);
         printf("\n");
     }
 
@@ -104,7 +104,7 @@ int main()
         }
 
         float ans = dot(c1, c2);
-        printf("%f\n", ans);
+        printf("%.2f\n", ans);
     }
 
     else if (strcmp(ins, "COS") == 0)
@@ -130,7 +130,7 @@ int main()
         }
 
         float ans = COS(c1, c2);
-        printf("%f\n", ans);
+        printf("%.2f\n", ans);
     }
 
     else
